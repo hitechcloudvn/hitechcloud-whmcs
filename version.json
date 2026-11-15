@@ -1,13 +1,14 @@
 {
-    "version": "3.43",
-    "released": "2026-01-09",
+    "version": "3.44",
+    "released": "2026-01-12",
     "min_whmcs_version": "8.0",
     "min_php_version": "7.4",
-    "download_url": "https://github.com/hitechcloudvn/hitechcloud-whmcs/releases/download/v3.43/hitechcloud-whmcs-module-v3.43.zip",
+    "download_url": "https://github.com/hitechcloudvn/hitechcloud-whmcs/releases/download/v3.44/hitechcloud-whmcs-module-v3.44.zip",
     "changelog": [
-        "Fixed client area VM actions with standalone AJAX endpoint",
-        "Bypasses WHMCS modop=custom routing that interfered with JSON responses",
-        "New ajax.php endpoint for direct API calls",
-        "Improved security with session validation and service ownership checks"
+        "VM Console Access Features with Shareable Links",
+        "Full OpenStack console URL compatibility with 4 fallback methods",
+        "Nova microversion 2.6+ header support",
+        "Standalone shared console page with dark-themed UI and fullscreen support",
+        "Token security with SHA-256 hashing and rate limiting"
     ]
 }

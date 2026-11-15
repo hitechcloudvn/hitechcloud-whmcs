@@ -534,4 +534,4 @@ The module expects configurable options with these naming conventions:
 ---
 
 *Documentation generated: December 2024*
-*Module Version: 3.30*
+*Module Version: 3.44*

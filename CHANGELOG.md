@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.44] - 2026-01-12
+
+### Added
+- **VM Console Access Features**
+  - View Boot Log: Display VM boot logs with configurable line count
+  - Share Console Access: Create time-limited shareable console links (1h to 30d)
+  - Manage Shares: List, view usage statistics, and revoke share tokens
+  - Standalone shared console page with dark-themed UI and fullscreen support
+  - Token security: SHA-256 hashing, constant-time comparison, rate limiting
+- `console_share.php` - Standalone page for shared console access
+- `console_share_api.php` - Public API for token validation
+
+### Fixed
+- **Console URL retrieval**: Full OpenStack compatibility with 4 fallback methods
+  - Method 1: remote-consoles (Nova microversion 2.6+ with proper header)
+  - Method 2: os-getVNCConsole (legacy)
+  - Method 3: getVNCConsole (alternative legacy)
+  - Method 4: os-getSPICEConsole (SPICE fallback)
+- Added `X-OpenStack-Nova-API-Version: 2.6` header for modern OpenStack deployments
+- Better error messages showing which console methods failed
+
+### Changed
+- Shared console page uses fullscreen mode instead of opening URL in new tab
+  - Prevents exposure of raw OpenStack console URLs
+  - Enforces share token expiry policy
+
 ## [3.43] - 2026-01-09
 
 ### Fixed
